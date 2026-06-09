@@ -1,4 +1,4 @@
-import User from "@/models/User";
+import User from "@/app/models/userModel";
 import connectDB from "@/lib/db/mongoose";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
