@@ -20,6 +20,9 @@ export async function POST(request) {
             return NextResponse.json({error:"Invalid Password"},{status:401})
             
         }
+        
+        return NextResponse.json({message:"Login Successfully"},{status:200})
+
 
 
 
