@@ -1,0 +1,31 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tiptap/extension-placeholder": "^2.0.0-beta.297",
+    "@tiptap/extension-underline": "^2.0.0-beta.297",
+    "@tiptap/react": "^2.0.0-beta.297",
+    "@tiptap/starter-kit": "^2.0.0-beta.297",
+    "bcryptjs": "^2.4.3",
+    "mongodb": "^6.8.0",
+    "mongoose": "^7.5.1",
+    "next": "14.2.5",
+    "next-auth": "^4.28.0",
+    "nanoid": "^5.0.0",
+    "pdfkit": "^0.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4"
+  }
+}
