@@ -12,8 +12,10 @@ export async function GET(req) {
   const session = await getSession(req)
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
+  const { searchParams } = new URL(req.url)
+  const trashed = searchParams.get('trashed') === 'true'
   await dbConnect()
-  const notes = await Note.find({ userId: session.user.id, isTrashed: false }).sort({ isPinned: -1, updatedAt: -1 })
+  const notes = await Note.find({ userId: session.user.id, isTrashed: trashed }).sort({ isPinned: -1, updatedAt: -1 })
   return NextResponse.json(notes)
 }
 
