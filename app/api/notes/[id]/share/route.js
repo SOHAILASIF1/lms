@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { nanoid } from 'nanoid'
-import dbConnect from '../../../../../../lib/mongoose'
-import { authOptions } from '../../../../../../lib/auth'
-import Note from '../../../../../../models/Note'
+import dbConnect from '../../../../../lib/mongoose'
+import { authOptions } from '../../../../../lib/auth'
+import Note from '../../../../../models/Note'
 
 async function getSession(req) {
   return getServerSession({ req }, authOptions)
