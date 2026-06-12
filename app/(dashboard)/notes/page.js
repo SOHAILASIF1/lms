@@ -48,7 +48,17 @@ export default function NotesPage() {
           <p className="text-sm text-slate-500">All notes</p>
           <h1 className="text-3xl font-semibold">Your library</h1>
         </div>
-        <button type="button" className="rounded-3xl bg-slate-900 px-5 py-3 text-white" onClick={() => router.push('/notes/new')}>
+        <button type="button" className="rounded-3xl bg-slate-900 px-5 py-3 text-white" onClick={async () => {
+          const res = await fetch('/api/notes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: 'Untitled', content: '' }),
+          })
+          if (res.ok) {
+            const note = await res.json()
+            router.push(`/notes/${note._id}`)
+          }
+        }}>
           New Note
         </button>
       </div>
