@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
 import dbConnect from '../../../lib/mongoose'
-import { authOptions } from '../../../lib/auth'
+import { getSession } from '../../../lib/session'
 import Folder from '../../../models/Folder'
-
-async function getSession(req) {
-  return getServerSession({ req }, authOptions)
-}
 
 export async function GET(req) {
   const session = await getSession(req)
